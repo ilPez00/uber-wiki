@@ -3,6 +3,9 @@
 
 ---
 
+## [USER](user.md)
+*AI-to-Human Interface Specification. Persona OS.*
+
 ## [PERSONA](persona.md)
 *Fullstack & AI Engineer. Mechanical Designer. Mountain Trekker.*
 
