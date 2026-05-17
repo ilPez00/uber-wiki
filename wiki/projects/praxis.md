@@ -1,3 +1,9 @@
+---
+title: Project — Praxis
+description: Multi-platform social OS for goal tracking and accountability. WebApp React/TS, Desktop Electron, Linux native. ~/Praxis/
+tags: [project, praxis, social, goals]
+updated: 2026-05-17
+---
 # PROJECT: PRAXIS
 > Social OS for goal tracking & accountability.
 

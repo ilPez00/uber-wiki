@@ -1,3 +1,9 @@
+---
+title: Project — Aura
+description: Android AI launcher + field assistant. Multimodal (vision+voice), 35+ LLM providers, serverless fallback. Kotlin/Compose. ~/merlin/
+tags: [project, aura, android, ai]
+updated: 2026-05-17
+---
 # PROJECT: AURA
 > Field-intelligence assistant & Android launcher.
 

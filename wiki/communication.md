@@ -1,3 +1,9 @@
+---
+title: Communication
+description: Chat logs and messaging. Gemini CLI logs, Aura logs, WhatsApp (no backup yet), email pezzingiovanniantonio@gmail.com.
+tags: [communication, logs, messaging]
+updated: 2026-05-17
+---
 # COMMUNICATION
 > Chat logs and interaction history.
 

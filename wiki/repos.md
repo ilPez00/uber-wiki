@@ -1,3 +1,9 @@
+---
+title: Repositories
+description: "Git repo inventory. Owned: uber-wiki, ai-api-tools, aura, praxis-*. Forks: omi, opencode, FastCat, llmwiki, llama.cpp."
+tags: [repos, git, projects]
+updated: 2026-05-17
+---
 # REPOSITORIES
 > Inventory of local git-tracked projects.
 

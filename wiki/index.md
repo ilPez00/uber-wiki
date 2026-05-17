@@ -1,3 +1,9 @@
+---
+title: GIO WIKI
+description: Unified knowledge base of Giovanni Pezzin. Projects (Aura, Praxis, Omi, llmwiki), infrastructure, accounts, repos, communication.
+tags: [index, wiki, gio]
+updated: 2026-05-17
+---
 # GIO WIKI: THE COMPILATION
 > Unified knowledge base of Giovanni Pezzin. Projects, Infrastructure, and Persona.
 

@@ -1,3 +1,9 @@
+---
+title: How To Use This Wiki
+description: Wiki usage guide. Ingest with ingest.py, llmwiki for search/MCP, uberwiki_cli for sync and Aura bridge export.
+tags: [guide, workflow, wiki]
+updated: 2026-05-17
+---
 # HOW TO USE THIS WIKI
 > Automated and Manual knowledge management.
 

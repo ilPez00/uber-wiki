@@ -384,6 +384,55 @@ def cmd_bridge(args):
             print(f"ADB push failed: {result.stderr}")
 
 
+def cmd_notes_export(args):
+    """Export human wiki markdown pages as Aura-compatible notes JSON."""
+    import re
+    root = Path(args.path).resolve()
+    hd = human_dir(root)
+
+    if not hd.exists():
+        print(f"Human wiki not found at {hd}. Run 'uberwiki_cli sync --full' first.")
+        return 1
+
+    notes = []
+    for md_file in sorted(hd.rglob("*.md")):
+        try:
+            raw = md_file.read_text(encoding="utf-8")
+            # Title: first H1, else filename stem
+            title_match = re.search(r'^#\s+(.+)$', raw, re.MULTILINE)
+            title = title_match.group(1).strip() if title_match else md_file.stem.replace('-', ' ').replace('_', ' ').title()
+            # Body: strip frontmatter if present
+            body = re.sub(r'^---[\s\S]*?---\s*', '', raw).strip()
+            # Tags: relative path parts
+            rel = md_file.relative_to(hd)
+            tags = list(rel.parts[:-1]) + ["wiki"]
+            notes.append({
+                "title": title,
+                "body": body,
+                "tags": tags,
+                "source": "wiki",
+                "kind": "observation",
+                "timestamp": int(md_file.stat().st_mtime * 1000),
+            })
+        except Exception as e:
+            print(f"  skip {md_file}: {e}")
+
+    out_path = Path(args.out) if args.out else (ai_dir(root) / "notes.json")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(notes, indent=2, ensure_ascii=False))
+    print(f"Exported {len(notes)} wiki pages → {out_path}")
+
+    if args.push:
+        import subprocess as sp
+        device_path = "/sdcard/Download/uberwiki_notes.json"
+        result = sp.run(["adb", "push", str(out_path), device_path],
+                        capture_output=True, text=True)
+        if result.returncode == 0:
+            print(f"Pushed to device: {device_path}")
+        else:
+            print(f"ADB push failed: {result.stderr}")
+
+
 def cmd_serve(args):
     root = Path(args.path).resolve()
 
@@ -553,6 +602,12 @@ Examples:
     add_path(p_bridge)
     p_bridge.add_argument("--push", action="store_true", help="Push to device via ADB")
 
+    # notes-export
+    p_notes = sub.add_parser("notes-export", help="Export human wiki pages as Aura notes JSON")
+    add_path(p_notes)
+    p_notes.add_argument("--push", action="store_true", help="Push to device via ADB")
+    p_notes.add_argument("--out", type=str, default="", help="Output path (default: .wiki/ai/notes.json)")
+
     # serve
     p_serve = sub.add_parser("serve", help="Start llmwiki MCP server")
     add_path(p_serve)
@@ -572,6 +627,7 @@ Examples:
         "profile": cmd_profile,
         "apply-merges": cmd_apply_merges,
         "bridge": cmd_bridge,
+        "notes-export": cmd_notes_export,
         "serve": cmd_serve,
         "status": cmd_status,
     }

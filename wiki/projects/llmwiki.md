@@ -1,3 +1,9 @@
+---
+title: Project — llmwiki
+description: Rust wiki engine solving index.md token bottleneck. BM25+semantic hybrid search, MCP server. ~/llmwiki/
+tags: [project, llmwiki, rust, search]
+updated: 2026-05-17
+---
 # PROJECT: LLMWIKI
 > Scalable knowledge indexing engine.
 

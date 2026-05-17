@@ -1,3 +1,9 @@
+---
+title: Accounts & Keys
+description: Account metadata and secret locations. GitHub ilPez00, Stripe, SerpAPI, AIMLAPI, Mistral/Gemini/Groq keys in ~/ai/.env.
+tags: [accounts, keys, auth]
+updated: 2026-05-17
+---
 # ACCOUNTS & KEYS
 > Central repository of account metadata and secret locations.
 

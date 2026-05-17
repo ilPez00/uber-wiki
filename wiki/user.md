@@ -1,3 +1,9 @@
+---
+title: User Specification — Giovanni Pezzin
+description: ilPez00 user spec. Systemic thinker, polymath. Caveman comms, DYNAMIS/APOTHEOSIS goals. CNS redlining May 2026.
+tags: [user, persona, ai-interface]
+updated: 2026-05-17
+---
 # USER SPECIFICATION: ilPez00 (GIOVANNI PEZZIN)
 > VERSION: 1.0 | CLASS: High-Intensity Polymath | STATUS: Recovering/Redlining
 

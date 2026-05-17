@@ -1,3 +1,9 @@
+---
+title: Project — Omi
+description: Wearable AI ecosystem integration. Flutter/Dart mobile, Node.js/Python backend, custom plugins. ~/omi/
+tags: [project, omi, wearable, flutter]
+updated: 2026-05-17
+---
 # PROJECT: OMI
 > Wearable AI ecosystem integration.
 
